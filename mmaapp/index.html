@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeNRBEIWYeWRRvY8On_9pkSD1_J_zLykQ&libraries=geometry">
+
+        </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="estilo.css">
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1/dist/html2canvas.min.js">
+</script>
+
+    <script src="codigo.js"></script>
+
+</head>
+
+<body>
+
+    <div id="widget" style="width: 150px;height: 150px;background-color: blueviolet;"></div>
+
+    <br />
+    <input type="button" id="btnSave" value="Save PNG" />
+
+    <div id="img-out"  style="width: 150px;height: 150px;background-color: rgb(77, 221, 101);"></div>
+
+
+    <img src="data:image/png;base64,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"></img>
+</body>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas2image@1.0.5/canvas2image.js"></script>
+
+
+</html>
